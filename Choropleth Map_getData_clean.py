@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
-
 from os import path
 import pandas as pd
 import time
@@ -124,7 +120,7 @@ if __name__ == '__main__':
                                     how='left')
     merged_data.rename(columns={'Percent in Poverty': 'pov2022'}, inplace=True)
 
-    # 打印合并后的数据
+    # print merged data
     print("Merged data:")
     print('jjjj', merged_data.shape)
     print(list(merged_data.columns.values))
@@ -136,10 +132,10 @@ if __name__ == '__main__':
     merged_data = merged_data[fields]
     merged_data = merged_data[fields].drop_duplicates()
     print(merged_data.shape)
-    # 将DataFrame转换为GeoDataFrame
+    # convert DataFrame into GeoDataFrame
     merged_data = gpd.GeoDataFrame(merged_data, geometry=gdf.geometry)
 
-    # 保存合并后的数据为新的Shapefile
+    # save new GeodataFrame into Shapefile
     merged_data.to_file(r'D:\self\202412\china\final.shp')
 
     print("Processing cost {} seconds".format(time.time() - t_start))
