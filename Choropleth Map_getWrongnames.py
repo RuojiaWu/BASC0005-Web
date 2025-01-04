@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
-
 from os import path
 import pandas as pd
 import time
@@ -10,13 +6,13 @@ import geopandas as gpd
 if __name__ == '__main__':
     filePath = r'D:\self\202412\china\shp'
     filename = path.join(filePath, 'states.shp')
-    dep2020File = r'D:\self\202412\china\2020 depression cleaned.csv'  # 替换为你的CSV文件路径
-    dep2021File = r'D:\self\202412\china\2021 depression cleaned.csv'  # 替换为你的CSV文件路径
-    dep2022File = r'D:\self\202412\china\2022 depression cleaned.csv'  # 替换为你的CSV文件路径
-    incomeFile = r'D:\self\202412\china\income.xlsx'  # 替换为你的CSV文件路径
-    eduFile = r'D:\self\202412\china\State_Level_Education.xlsx'  # 替换为你的CSV文件路径
-    shiyeFile = r'D:\self\202412\china\yearly_unemployment_english.xlsx'  # 替换为你的CSV文件路径
-    povertyFile = r'D:\self\202412\china\poverty.csv'  # 替换为你的CSV文件路径
+    dep2020File = r'D:\self\202412\china\2020 depression cleaned.csv' 
+    dep2021File = r'D:\self\202412\china\2021 depression cleaned.csv'  
+    dep2022File = r'D:\self\202412\china\2022 depression cleaned.csv' 
+    incomeFile = r'D:\self\202412\china\income.xlsx'  
+    eduFile = r'D:\self\202412\china\State_Level_Education.xlsx' 
+    shiyeFile = r'D:\self\202412\china\yearly_unemployment_english.xlsx' 
+    povertyFile = r'D:\self\202412\china\poverty.csv' 
 
     t_start = time.time()
 
@@ -49,29 +45,6 @@ if __name__ == '__main__':
     shiyeNames = set(list(shiye_df['state']))
     povertyNames = set(list(poverty_df['Name']))
 
-    # print(allNames-dep2020Names)
-    # print(dep2020Names-allNames)
-
-    # print(allNames - dep2021Names)
-    # print(dep2021Names - allNames)
-
-    # print(allNames - dep2022Names)
-    # print(dep2022Names - allNames)
-
-    # print(allNames - income2020Names)
-    # print(income2020Names - allNames)
-
-    # print(allNames - income2021Names)
-    # print(income2021Names - allNames)
-
-    # print(allNames - income2022Names)
-    # print(income2022Names - allNames)
-
-    # print(allNames - eduNames)
-    # print(eduNames - allNames)
-
-    # print(allNames - shiyeNames)
-    # print(shiyeNames - allNames)
 
     print(allNames - povertyNames)
     print(povertyNames - allNames)
